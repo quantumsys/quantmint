@@ -16,9 +16,9 @@ PACKAGES=$(shell go list ./... | grep -Ev 'vendor|importer|rpc/tester')
 COMMIT_HASH := $(shell git rev-parse --short HEAD)
 BUILD_FLAGS = -tags netgo -ldflags "-X github.com/quantumsys/quantmint/version.GitCommit=${COMMIT_HASH}"
 DOCKER_TAG = unstable
-DOCKER_IMAGE = cosmos/ethermint
-ETHERMINT_DAEMON_BINARY = emintd
-ETHERMINT_CLI_BINARY = emintcli
+DOCKER_IMAGE = quantsys/quantmint
+QUANTMINT_DAEMON_BINARY = qmintd
+QUANTMINT_CLI_BINARY = qmintcli
 GO_MOD=GO111MODULE=on
 BINDIR ?= $(GOPATH)/bin
 SIMAPP = github.com/quantumsys/quantmint/app
@@ -32,16 +32,16 @@ all: tools verify install
 
 build:
 ifeq ($(OS),Windows_NT)
-	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(ETHERMINT_DAEMON_BINARY).exe ./cmd/emintd
-	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(ETHERMINT_CLI_BINARY).exe ./cmd/emintcli
+	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(QUANTMINT_DAEMON_BINARY).exe ./cmd/qmintd
+	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(QUANTMINT_CLI_BINARY).exe ./cmd/qmintcli
 else
-	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(ETHERMINT_DAEMON_BINARY) ./cmd/emintd/
-	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(ETHERMINT_CLI_BINARY) ./cmd/emintcli/
+	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(QUANTMINT_DAEMON_BINARY) ./cmd/qmintd/
+	${GO_MOD} go build $(BUILD_FLAGS) -o build/$(QUANTMINT_CLI_BINARY) ./cmd/qmintcli/
 endif
 
 install:
-	${GO_MOD} go install $(BUILD_FLAGS) ./cmd/emintd
-	${GO_MOD} go install $(BUILD_FLAGS) ./cmd/emintcli
+	${GO_MOD} go install $(BUILD_FLAGS) ./cmd/qmintd
+	${GO_MOD} go install $(BUILD_FLAGS) ./cmd/qmintcli
 
 clean:
 	@rm -rf ./build ./vendor
@@ -264,22 +264,22 @@ test-sim-nondeterminism:
 
 test-sim-custom-genesis-fast:
 	@echo "Running custom genesis simulation..."
-	@echo "By default, ${HOME}/.emintd/config/genesis.json will be used."
-	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.emintd/config/genesis.json \
+	@echo "By default, ${HOME}/.qmintd/config/genesis.json will be used."
+	@go test -mod=readonly $(SIMAPP) -run TestFullAppSimulation -Genesis=${HOME}/.qmintd/config/genesis.json \
 		-Enabled=true -NumBlocks=100 -BlockSize=200 -Commit=true -Seed=99 -Period=5 -v -timeout 24h
 
 test-sim-import-export: runsim
-	@echo "Running Ethermint import/export simulation. This may take several minutes..."
+	@echo "Running Quantmint import/export simulation. This may take several minutes..."
 	@$(BINDIR)/runsim -Jobs=4 -SimAppPkg=$(SIMAPP) 25 5 TestAppImportExport
 
 test-sim-after-import: runsim
-	@echo "Running Ethermint simulation-after-import. This may take several minutes..."
+	@echo "Running Quantmint simulation-after-import. This may take several minutes..."
 	@$(BINDIR)/runsim -Jobs=4 -SimAppPkg=$(SIMAPP) 25 5 TestAppSimulationAfterImport
 
 test-sim-custom-genesis-multi-seed: runsim
 	@echo "Running multi-seed custom genesis simulation..."
-	@echo "By default, ${HOME}/.emintd/config/genesis.json will be used."
-	@$(BINDIR)/runsim -Jobs=4 -Genesis=${HOME}/.emintd/config/genesis.json 400 5 TestFullAppSimulation
+	@echo "By default, ${HOME}/.qmintd/config/genesis.json will be used."
+	@$(BINDIR)/runsim -Jobs=4 -Genesis=${HOME}/.qmintd/config/genesis.json 400 5 TestFullAppSimulation
 
 test-sim-multi-seed-long: runsim
 	@echo "Running multi-seed application simulation. This may take awhile!"
