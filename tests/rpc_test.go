@@ -26,8 +26,8 @@ import (
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/cosmos/ethermint/rpc"
-	"github.com/cosmos/ethermint/version"
+	"github.com/quantumsys/quantmint/rpc"
+	"github.com/quantumsys/quantmint/version"
 )
 
 const (

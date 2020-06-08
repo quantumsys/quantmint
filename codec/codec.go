@@ -11,8 +11,8 @@ import (
 	authexported "github.com/cosmos/cosmos-sdk/x/auth/exported"
 	"github.com/cosmos/cosmos-sdk/x/auth/vesting"
 
-	emintcrypto "github.com/cosmos/ethermint/crypto"
-	eminttypes "github.com/cosmos/ethermint/types"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
+	eminttypes "github.com/quantumsys/quantmint/types"
 )
 
 var (

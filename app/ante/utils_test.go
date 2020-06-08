@@ -11,11 +11,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 
-	"github.com/cosmos/ethermint/app"
-	ante "github.com/cosmos/ethermint/app/ante"
-	"github.com/cosmos/ethermint/crypto"
-	emint "github.com/cosmos/ethermint/types"
-	evmtypes "github.com/cosmos/ethermint/x/evm/types"
+	"github.com/quantumsys/quantmint/app"
+	ante "github.com/quantumsys/quantmint/app/ante"
+	"github.com/quantumsys/quantmint/crypto"
+	emint "github.com/quantumsys/quantmint/types"
+	evmtypes "github.com/quantumsys/quantmint/x/evm/types"
 
 	ethcrypto "github.com/ethereum/go-ethereum/crypto"
 

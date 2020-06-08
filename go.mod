@@ -1,4 +1,4 @@
-module github.com/cosmos/ethermint
+module github.com/quantumsys/quantmint
 
 go 1.14
 

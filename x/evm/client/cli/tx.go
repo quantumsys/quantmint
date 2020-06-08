@@ -21,9 +21,9 @@ import (
 	authclient "github.com/cosmos/cosmos-sdk/x/auth/client"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 
-	ethermintcodec "github.com/cosmos/ethermint/codec"
-	emint "github.com/cosmos/ethermint/types"
-	"github.com/cosmos/ethermint/x/evm/types"
+	ethermintcodec "github.com/quantumsys/quantmint/codec"
+	emint "github.com/quantumsys/quantmint/types"
+	"github.com/quantumsys/quantmint/x/evm/types"
 )
 
 // GetTxCmd defines the CLI commands regarding evm module transactions

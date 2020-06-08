@@ -22,9 +22,9 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/cosmos/ethermint/app"
-	"github.com/cosmos/ethermint/codec"
-	emintcrypto "github.com/cosmos/ethermint/crypto"
+	"github.com/quantumsys/quantmint/app"
+	"github.com/quantumsys/quantmint/codec"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmamino "github.com/tendermint/tendermint/crypto/encoding/amino"

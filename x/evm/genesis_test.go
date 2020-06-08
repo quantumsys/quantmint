@@ -4,9 +4,9 @@ import (
 	"crypto/ecdsa"
 	"math/big"
 
-	"github.com/cosmos/ethermint/crypto"
-	"github.com/cosmos/ethermint/x/evm"
-	"github.com/cosmos/ethermint/x/evm/types"
+	"github.com/quantumsys/quantmint/crypto"
+	"github.com/quantumsys/quantmint/x/evm"
+	"github.com/quantumsys/quantmint/x/evm/types"
 
 	"github.com/ethereum/go-ethereum/common"
 )

@@ -11,8 +11,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/bank"
 
-	emint "github.com/cosmos/ethermint/types"
-	evmtypes "github.com/cosmos/ethermint/x/evm/types"
+	emint "github.com/quantumsys/quantmint/types"
+	evmtypes "github.com/quantumsys/quantmint/x/evm/types"
 
 	ethcore "github.com/ethereum/go-ethereum/core"
 )

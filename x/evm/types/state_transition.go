@@ -12,7 +12,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	emint "github.com/cosmos/ethermint/types"
+	emint "github.com/quantumsys/quantmint/types"
 )
 
 // StateTransition defines data to transitionDB in evm

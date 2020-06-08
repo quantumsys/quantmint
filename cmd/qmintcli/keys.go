@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	emintCrypto "github.com/cosmos/ethermint/crypto"
+	emintCrypto "github.com/quantumsys/quantmint/crypto"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

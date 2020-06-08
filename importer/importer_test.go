@@ -21,11 +21,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	"github.com/cosmos/cosmos-sdk/x/params"
 
-	"github.com/cosmos/ethermint/codec"
-	"github.com/cosmos/ethermint/core"
-	emintcrypto "github.com/cosmos/ethermint/crypto"
-	"github.com/cosmos/ethermint/types"
-	evmtypes "github.com/cosmos/ethermint/x/evm/types"
+	"github.com/quantumsys/quantmint/codec"
+	"github.com/quantumsys/quantmint/core"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
+	"github.com/quantumsys/quantmint/types"
+	evmtypes "github.com/quantumsys/quantmint/x/evm/types"
 
 	ethcmn "github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/consensus/ethash"

@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/cosmos/ethermint.svg?style=svg)](https://circleci.com/gh/cosmos/ethermint)
-[![](https://godoc.org/github.com/cosmos/ethermint?status.svg)](http://godoc.org/github.com/cosmos/ethermint) [![Go Report Card](https://goreportcard.com/badge/github.com/cosmos/ethermint)](https://goreportcard.com/report/github.com/cosmos/ethermint)
+[![](https://godoc.org/github.com/quantumsys/quantmint?status.svg)](http://godoc.org/github.com/quantumsys/quantmint) [![Go Report Card](https://goreportcard.com/badge/github.com/quantumsys/quantmint)](https://goreportcard.com/report/github.com/quantumsys/quantmint)
 
 # Ethermint
 

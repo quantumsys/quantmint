@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"math/big"
 
-	"github.com/cosmos/ethermint/x/evm/types"
+	"github.com/quantumsys/quantmint/x/evm/types"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 )

@@ -21,9 +21,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	"github.com/cosmos/cosmos-sdk/x/genutil"
 
-	"github.com/cosmos/ethermint/codec"
-	ethermint "github.com/cosmos/ethermint/types"
 	ethcrypto "github.com/ethereum/go-ethereum/crypto"
+	"github.com/quantumsys/quantmint/codec"
+	ethermint "github.com/quantumsys/quantmint/types"
 )
 
 const (

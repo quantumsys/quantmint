@@ -6,7 +6,7 @@ import (
 )
 
 // AppName represents the application name as the 'user agent' on the larger Ethereum network.
-const AppName = "Ethermint"
+const AppName = "Quantmint"
 
 // Version contains the application semantic version.
 //

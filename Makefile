@@ -14,14 +14,14 @@
 
 PACKAGES=$(shell go list ./... | grep -Ev 'vendor|importer|rpc/tester')
 COMMIT_HASH := $(shell git rev-parse --short HEAD)
-BUILD_FLAGS = -tags netgo -ldflags "-X github.com/cosmos/ethermint/version.GitCommit=${COMMIT_HASH}"
+BUILD_FLAGS = -tags netgo -ldflags "-X github.com/quantumsys/quantmint/version.GitCommit=${COMMIT_HASH}"
 DOCKER_TAG = unstable
 DOCKER_IMAGE = cosmos/ethermint
 ETHERMINT_DAEMON_BINARY = emintd
 ETHERMINT_CLI_BINARY = emintcli
 GO_MOD=GO111MODULE=on
 BINDIR ?= $(GOPATH)/bin
-SIMAPP = github.com/cosmos/ethermint/app
+SIMAPP = github.com/quantumsys/quantmint/app
 RUNSIM = $(BINDIR)/runsim
 
 all: tools verify install
@@ -166,7 +166,7 @@ it-tests:
 	./scripts/integration-test-all.sh -q 1 -z 1 -s 2
 
 godocs:
-	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/cosmos/ethermint"
+	@echo "--> Wait a few seconds and visit http://localhost:6060/pkg/github.com/quantumsys/quantmint"
 	godoc -http=:6060
 
 docker:

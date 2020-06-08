@@ -16,7 +16,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	emintcrypto "github.com/cosmos/ethermint/crypto"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
 )
 
 func unsafeExportEthKeyCommand() *cobra.Command {

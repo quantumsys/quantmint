@@ -4,8 +4,8 @@ package rpc
 
 import (
 	"github.com/cosmos/cosmos-sdk/client/context"
-	emintcrypto "github.com/cosmos/ethermint/crypto"
 	"github.com/ethereum/go-ethereum/rpc"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
 )
 
 const Web3Namespace = "web3"

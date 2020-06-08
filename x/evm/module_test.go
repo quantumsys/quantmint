@@ -3,7 +3,7 @@ package evm_test
 import (
 	"encoding/json"
 
-	"github.com/cosmos/ethermint/x/evm"
+	"github.com/quantumsys/quantmint/x/evm"
 
 	"github.com/ethereum/go-ethereum/common"
 )

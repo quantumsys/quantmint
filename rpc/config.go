@@ -14,9 +14,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authrest "github.com/cosmos/cosmos-sdk/x/auth/client/rest"
 
-	"github.com/cosmos/ethermint/app"
-	emintcrypto "github.com/cosmos/ethermint/crypto"
 	"github.com/ethereum/go-ethereum/rpc"
+	"github.com/quantumsys/quantmint/app"
+	emintcrypto "github.com/quantumsys/quantmint/crypto"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"

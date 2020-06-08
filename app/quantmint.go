@@ -24,12 +24,12 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/slashing"
 	"github.com/cosmos/cosmos-sdk/x/staking"
 	"github.com/cosmos/cosmos-sdk/x/supply"
-	ethermintcodec "github.com/cosmos/ethermint/codec"
+	ethermintcodec "github.com/quantumsys/quantmint/codec"
 
-	"github.com/cosmos/ethermint/app/ante"
-	eminttypes "github.com/cosmos/ethermint/types"
-	"github.com/cosmos/ethermint/x/evm"
-	"github.com/cosmos/ethermint/x/faucet"
+	"github.com/quantumsys/quantmint/app/ante"
+	eminttypes "github.com/quantumsys/quantmint/types"
+	"github.com/quantumsys/quantmint/x/evm"
+	"github.com/quantumsys/quantmint/x/faucet"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 	"github.com/tendermint/tendermint/libs/log"
@@ -37,14 +37,14 @@ import (
 	dbm "github.com/tendermint/tm-db"
 )
 
-const appName = "Ethermint"
+const appName = "Quantmint"
 
 var (
 	// DefaultCLIHome sets the default home directories for the application CLI
-	DefaultCLIHome = os.ExpandEnv("$HOME/.emintcli")
+	DefaultCLIHome = os.ExpandEnv("$HOME/.qmintcli")
 
 	// DefaultNodeHome sets the folder where the applcation data and configuration will be stored
-	DefaultNodeHome = os.ExpandEnv("$HOME/.emintd")
+	DefaultNodeHome = os.ExpandEnv("$HOME/.qmintd")
 
 	// ModuleBasics defines the module BasicManager is in charge of setting up basic,
 	// non-dependant module elements, such as codec registration

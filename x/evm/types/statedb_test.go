@@ -10,8 +10,8 @@ import (
 	ethcmn "github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/cosmos/ethermint/app"
-	"github.com/cosmos/ethermint/x/evm/keeper"
+	"github.com/quantumsys/quantmint/app"
+	"github.com/quantumsys/quantmint/x/evm/keeper"
 
 	abci "github.com/tendermint/tendermint/abci/types"
 )

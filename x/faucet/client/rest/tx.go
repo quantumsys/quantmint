@@ -11,7 +11,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/rest"
 	authclient "github.com/cosmos/cosmos-sdk/x/auth/client"
 
-	"github.com/cosmos/ethermint/x/faucet/types"
+	"github.com/quantumsys/quantmint/x/faucet/types"
 )
 
 // RegisterRoutes register REST endpoints for the faucet module

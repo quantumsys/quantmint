@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/cosmos/ethermint/utils"
+	"github.com/quantumsys/quantmint/utils"
 
 	ethcmn "github.com/ethereum/go-ethereum/common"
 )

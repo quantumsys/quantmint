@@ -7,8 +7,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	emint "github.com/cosmos/ethermint/types"
-	"github.com/cosmos/ethermint/x/evm/types"
+	emint "github.com/quantumsys/quantmint/types"
+	"github.com/quantumsys/quantmint/x/evm/types"
 
 	tmtypes "github.com/tendermint/tendermint/types"
 )
