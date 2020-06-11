@@ -28,3 +28,21 @@ message EthAccount {
     (gogoproto.castvalue) = "github.com/cosmos/cosmos-sdk/types.AccAddress"
   ];
 }
+
+message SubAccount {
+  option (gogoproto.goproto_getters)  = false;
+  option (gogoproto.goproto_stringer) = false;
+
+  cosmos_sdk.x.auth.v1.BaseAccount base_account = 1 [
+    (gogoproto.embed) = true,
+    (gogoproto.moretags) = "yaml:\"base_account\""
+  ];
+  bytes main_address = 2 [
+    (gogoproto.moretags) = "yaml:\"main_address\"",
+    (gogoproto.casttype) = "github.com/cosmos/cosmos-sdk/types.AccAddress"
+  ];
+  repeated int32 perms = 3 [
+    (gogoproto.moretags) = "yaml:\"perms\"",
+    (gogoproto.casttype) = "github.com/quantumsys/quantmint/types.PermValue"
+  ];
+}

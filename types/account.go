@@ -104,3 +104,72 @@ func (acc *EthAccount) UnmarshalJSON(bz []byte) error {
 
 	return nil
 }
+
+type subAccountPretty struct {
+	Address       sdk.AccAddress `json:"address" yaml:"address"`
+	PubKey        []byte         `json:"public_key" yaml:"public_key"`
+	AccountNumber uint64         `json:"account_number" yaml:"account_number"`
+	Sequence      uint64         `json:"sequence" yaml:"sequence"`
+
+	MainAddress sdk.AccAddress `json:"main_address" yaml:"main_address"`
+	Perms       []PermValue    `json:"perms" yaml:"perms"`
+}
+
+// MarshalYAML returns the YAML representation of an SubAccount.
+func (acc SubAccount) MarshalYAML() (interface{}, error) {
+	alias := subAccountPretty{
+		Address:       acc.Address,
+		PubKey:        acc.PubKey,
+		AccountNumber: acc.AccountNumber,
+		Sequence:      acc.Sequence,
+		MainAddress:   acc.MainAddress,
+		Perms:         acc.Perms,
+	}
+
+	bz, err := yaml.Marshal(alias)
+	if err != nil {
+		return nil, err
+	}
+
+	return string(bz), err
+}
+
+// MarshalJSON returns the JSON representation of an SubAccount.
+func (acc SubAccount) MarshalJSON() ([]byte, error) {
+	alias := subAccountPretty{
+		Address:       acc.Address,
+		PubKey:        acc.PubKey,
+		AccountNumber: acc.AccountNumber,
+		Sequence:      acc.Sequence,
+		MainAddress:   acc.MainAddress,
+		Perms:         acc.Perms,
+	}
+
+	return json.Marshal(alias)
+}
+
+// UnmarshalJSON unmarshals raw JSON bytes into an SubAccount.
+func (acc *SubAccount) UnmarshalJSON(bz []byte) error {
+	acc.BaseAccount = &authtypes.BaseAccount{}
+	var alias subAccountPretty
+	if err := json.Unmarshal(bz, &alias); err != nil {
+		return err
+	}
+
+	if alias.PubKey != nil {
+		pubk, err := tmamino.PubKeyFromBytes(alias.PubKey)
+		if err != nil {
+			return err
+		}
+
+		acc.BaseAccount.PubKey = pubk.Bytes()
+	}
+
+	acc.BaseAccount.Address = alias.Address
+	acc.BaseAccount.AccountNumber = alias.AccountNumber
+	acc.BaseAccount.Sequence = alias.Sequence
+	acc.MainAddress = alias.MainAddress
+	acc.Perms = alias.Perms
+
+	return nil
+}
