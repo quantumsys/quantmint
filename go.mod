@@ -19,7 +19,7 @@ require (
 	github.com/onsi/gomega v1.8.1 // indirect
 	github.com/pkg/errors v0.9.1
 	github.com/prometheus/tsdb v0.9.1 // indirect
-	github.com/regen-network/cosmos-proto v0.1.1-0.20200213154359-02baa11ea7c2
+	github.com/regen-network/cosmos-proto v0.3.0
 	github.com/rjeczalik/notify v0.9.2 // indirect
 	github.com/spf13/afero v1.2.2 // indirect
 	github.com/spf13/cobra v0.0.7

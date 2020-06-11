@@ -20,4 +20,11 @@ message EthAccount {
   bytes code_hash = 2 [
     (gogoproto.moretags) = "yaml:\"code_hash\""
   ];
+  string name = 3 [
+    (gogoproto.moretags) = "yaml:\"name\""
+  ];
+  map<string, bytes> sub_addresses = 4 [
+    (gogoproto.moretags) = "yaml:\"sub_addresses\"",
+    (gogoproto.castvalue) = "github.com/cosmos/cosmos-sdk/types.AccAddress"
+  ];
 }

@@ -25,8 +25,9 @@ var _ exported.GenesisAccount = (*EthAccount)(nil)
 // AccountKeeper.
 func ProtoAccount() exported.Account {
 	return &EthAccount{
-		BaseAccount: &auth.BaseAccount{},
-		CodeHash:    ethcrypto.Keccak256(nil),
+		BaseAccount:  &auth.BaseAccount{},
+		CodeHash:     ethcrypto.Keccak256(nil),
+		SubAddresses: map[string]sdk.AccAddress{},
 	}
 }
 
@@ -37,6 +38,9 @@ type ethermintAccountPretty struct {
 	AccountNumber uint64         `json:"account_number" yaml:"account_number"`
 	Sequence      uint64         `json:"sequence" yaml:"sequence"`
 	CodeHash      string         `json:"code_hash" yaml:"code_hash"`
+
+	Name         string                    `json:"name" yaml:"name"`
+	SubAddresses map[string]sdk.AccAddress `json:"sub_addresses" yaml:"sub_addresses"`
 }
 
 // MarshalYAML returns the YAML representation of an account.
@@ -47,6 +51,8 @@ func (acc EthAccount) MarshalYAML() (interface{}, error) {
 		AccountNumber: acc.AccountNumber,
 		Sequence:      acc.Sequence,
 		CodeHash:      ethcmn.Bytes2Hex(acc.CodeHash),
+		Name:          acc.Name,
+		SubAddresses:  acc.SubAddresses,
 	}
 
 	bz, err := yaml.Marshal(alias)
@@ -65,6 +71,8 @@ func (acc EthAccount) MarshalJSON() ([]byte, error) {
 		AccountNumber: acc.AccountNumber,
 		Sequence:      acc.Sequence,
 		CodeHash:      ethcmn.Bytes2Hex(acc.CodeHash),
+		Name:          acc.Name,
+		SubAddresses:  acc.SubAddresses,
 	}
 
 	return json.Marshal(alias)
@@ -91,6 +99,8 @@ func (acc *EthAccount) UnmarshalJSON(bz []byte) error {
 	acc.BaseAccount.AccountNumber = alias.AccountNumber
 	acc.BaseAccount.Sequence = alias.Sequence
 	acc.CodeHash = ethcmn.Hex2Bytes(alias.CodeHash)
+	acc.Name = alias.Name
+	acc.SubAddresses = alias.SubAddresses
 
 	return nil
 }
